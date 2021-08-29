@@ -3,11 +3,25 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 %   theta = GRADIENTDESCENT(X, y, theta, alpha, num_iters) updates theta by 
 %   taking num_iters gradient steps with learning rate alpha
 
+%% -------------------test ------------------------------------------
+
+%data = load('ex1data1.txt');
+%y = data(:, 2);
+%m = length(y); % number of training examples = 97
+%X = [ones(m, 1), data(:,1)]; % [full 1 column, data from the file] = 97x2
+%theta = zeros(2, 1);
+%alpha = 0.01;
+%num_iters = 1500;
+
+%% ------------------end test-----------------------------------------
+
+
+
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
 
-for iter = 1:num_iters
+for iter = 1:num_iters % repeat until convergence
 
     % ====================== YOUR CODE HERE ======================
     % Instructions: Perform a single gradient step on the parameter vector
@@ -16,8 +30,22 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-
-
+    pridictions = X * theta; % 97x1
+     % X = [ones(m, 1), data(:,1)]; m  =  number of training examples. m = vetor. data = vetor. data = first column of ex1data
+     %theta = zeros(2, 1); vetor 2x1 [0; 0] 
+     % X = [number-of-training-examples(97) = full of ones  first-column-of-ex1data(97)] 
+     % predictions = (97,2) * [0; 0] = 97x1
+    error = pridictions - y; 
+     
+    
+    
+    equa0 = theta(1) - ( alpha /m ) * sum(error.* X(:,1)); %equation 0
+    equa1 = theta(2) - ( alpha /m ) * sum(error.* X(:,2)); %equation 1
+    % m = number of training examples = 97
+    % alpha = 0.01;
+    
+    theta = [equa0; equa1];
+      %theta = theta - (1/m) * alpha * (X' * error);
 
 
 
@@ -26,8 +54,7 @@ for iter = 1:num_iters
     % ============================================================
 
     % Save the cost J in every iteration    
-    J_history(iter) = computeCost(X, y, theta);
-
+    J_history(iter) = computeCost(X, y, theta); % decreasing over time
 end
 
 end
