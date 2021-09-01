@@ -18,6 +18,24 @@ for iter = 1:num_iters
     %
 
 
+    pridictions = X * theta; % 97x1
+     % X = [ones(m, 1), data(:,1)]; m  =  number of training examples. m = vetor. data = vetor. data = first column of ex1data
+     %theta = zeros(2, 1); vetor 2x1 [0; 0] 
+     % X = [number-of-training-examples(97) = full of ones  first-column-of-ex1data(97)] 
+     % predictions = (97,2) * [0; 0] = 97x1
+    error = pridictions - y; 
+     
+    
+    newX = error' * X;
+    theta = theta - ((alpha/m)* newX');
+    
+    %equa0 = theta(1) - ( alpha /m ) * sum(error.* X(:,1)); %equation 0
+    %equa1 = theta(2) - ( alpha /m ) * sum(error.* X(:,2)); %equation 1
+    % m = number of training examples = 97
+    % alpha = 0.01;
+    %theta = [equa0; equa1];
+    
+    %theta = theta - (1/m) * alpha * (X' * error);
 
 
 

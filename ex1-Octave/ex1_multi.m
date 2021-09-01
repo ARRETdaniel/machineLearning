@@ -44,7 +44,7 @@ fprintf('First 10 examples from the dataset: \n');
 fprintf(' x = [%.0f %.0f], y = %.0f \n', [X(1:10,:) y(1:10,:)]');
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+
 
 % Scale features and set them to zero mean
 fprintf('Normalizing Features ...\n');
@@ -91,7 +91,7 @@ theta = zeros(3, 1);
 
 % Plot the convergence graph
 figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+plot(1:numel(J_history), J_history, '-r', 'LineWidth', 1);
 xlabel('Number of iterations');
 ylabel('Cost J');
 
@@ -106,14 +106,20 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
+%temp = [1 1650 3];
+%temp(1,2) = (temp(1,2) - mu(1,1))/(sigma(1,1));
+%temp(1,3) = (temp(1,3) - mu(1,2))/(sigma(1,2));
+%price = temp * theta;
 
+element = [1,(1650 - mu(1))/sigma(1),(3 - mu(2))/sigma(2)];
+price = element * theta;
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
          '(using gradient descent):\n $%f\n'], price);
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+
 
 %% ================ Part 3: Normal Equations ================
 
@@ -150,7 +156,8 @@ fprintf('\n');
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
-
+element = [1,1650,3];
+price = element * theta;
 
 % ============================================================
 

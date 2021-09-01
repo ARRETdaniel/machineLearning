@@ -38,14 +38,17 @@ for iter = 1:num_iters % repeat until convergence
     error = pridictions - y; 
      
     
+    newX = error' * X;
+    theta = theta - ((alpha/m)* newX');
     
-    equa0 = theta(1) - ( alpha /m ) * sum(error.* X(:,1)); %equation 0
-    equa1 = theta(2) - ( alpha /m ) * sum(error.* X(:,2)); %equation 1
+    %equa0 = theta(1) - ( alpha /m ) * sum(error.* X(:,1)); %equation 0
+    %equa1 = theta(2) - ( alpha /m ) * sum(error.* X(:,2)); %equation 1
     % m = number of training examples = 97
     % alpha = 0.01;
     
-    theta = [equa0; equa1];
-      %theta = theta - (1/m) * alpha * (X' * error);
+    %theta = [equa0; equa1];
+    
+    %theta = theta - (1/m) * alpha * (X' * error);
 
 
 
