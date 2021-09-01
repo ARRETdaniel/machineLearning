@@ -20,3 +20,19 @@ SKILLS YOU WILL GAIN:
 
 ** Course on Coursera
 - [[https://www.coursera.org/learn/machine-learning][Machine Learning Course]]
+
+** Weeks:
+
+| Week # | Quizzes | Assignments | 
+|--------|------------------------|---------|------------|-------------|------------|
+| Week 1 | Introduction, Linear Regression, Linear Algebra | 
+| Week 2 |  Linear Regression with multiple Variables, Octave/MATLAB |  Linear Regression | 
+| Week 3 | Logistic Regression, Regularization |  Logistic Regression | 
+| Week 4 |  Neural Networks: Representation| Multi-class Classification and Neural Networks | 
+| Week 5 |  Neural Networks: Learning |Neural Network Learning | 
+| Week 6 |  Advice for Applying Machine Learning, Machine Learning System Design |  Regularized Linear Regression and Bias/Variance | 
+| Week 7 | Support Vector Machines | Support Vector Machines |
+| Week 8 |  Unsupervised Learning, Principal Component Analysis |  K-Means Clustering & PCA |  
+| Week 9 |  Anomaly Detection, Recommender Systems | Anomaly Detection and Recommender Systems | 
+| Week 10 | Large-Scale Machine Learning | 
+| Week 11 | Photo OCR | 
