@@ -90,7 +90,7 @@ fprintf('Expected gradients (approx) - first five values only:\n');
 fprintf(' 0.3460\n 0.1614\n 0.1948\n 0.2269\n 0.0922\n');
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+%pause;
 
 %% ============= Part 2: Regularization and Accuracies =============
 %  Optional Exercise:
@@ -133,4 +133,3 @@ p = predict(theta, X);
 
 fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 fprintf('Expected accuracy (with lambda = 1): 83.1 (approx)\n');
-
