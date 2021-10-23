@@ -98,7 +98,7 @@ for t = 1:m,
 	d3 = a3t - yt;
   %delta_3 = a3 - yk(:,t); %% y(k) trick - getting columns of t element
 	d2 = Theta2'*d3' .* sigmoidGradient([1;Theta1 * a1t']);
-	del1 = del1 + d2(2:end)*a1t;
+	del1 = del1 + d2(2:end)*a1t; % Accumulate the gradient from this example using the following formula. Note that you should skip or remove δ(2)0. In Octave/MATLAB, removing δ (2) 0 corresponds to delta 2 = delta 2(2:end)
 	del2 = del2 + d3' * a2t;
 end;
 

@@ -17,11 +17,8 @@ g = zeros(size(z));
 
 g = sigmoid(z) .* (1-sigmoid(z));
 
-
-
-
-
-
+%g0(z) = d dz g(z) = g(z)(1 − g(z))
+%sigmoid(z) = g(z) = 1 1 + e−z
 
 
 
