@@ -36,3 +36,4 @@ This course provides a broad introduction to machine learning, datamining, and s
 | Week 9 |  Anomaly Detection, Recommender Systems | Anomaly Detection and Recommender Systems | 
 | Week 10 | Large-Scale Machine Learning | N/A |
 | Week 11 | Photo OCR | N/A |
+
