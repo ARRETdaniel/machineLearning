@@ -21,7 +21,7 @@ function J = computeCost(X, y, theta)
 
  m = length(y); % number of training examples = 97
 
-% You need to return the following variables correctly 
+% You need to return the following variables correctly
 J = 0;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
@@ -29,10 +29,10 @@ J = 0;
 
 predictions = X*theta; % 97x1
 % X = [ones(m, 1), data(:,1)]; m  =  number of training examples. m = vetor. data = vetor. data = first column of ex1data
-%theta = zeros(2, 1); vetor 2x1 [0; 0] 
-% X = [number-of-training-examples(97) = full of ones  first-column-of-ex1data(97)] 
+%theta = zeros(2, 1); vetor 2x1 [0; 0]
+% X = [number-of-training-examples(97) = full of ones  first-column-of-ex1data(97)]
 % predictions = (97,2) * [0; 0] = 97x1
-
+%
 sqrtErros = (predictions - y).^2; % [1,1] = 0 - 17.592 = 17.592^2 = 309
 %predictions = all zeros 97x1
 %y = data(:, 2); all data from the second column of txt ex1data 97x1
