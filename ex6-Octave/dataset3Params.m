@@ -72,8 +72,57 @@ fprintf("\n\nLeast error:\nC: %f\nsigma: %f\nerror: %f\n", C, sigma, minError);
 %}
 
 
+choice = [0.01 0.03 0.1 0.3 1 3 10 30]';
+minError = Inf;
+curC = Inf;
+cur_sigma = Inf;
+
+for i = 1:8
+	for j = 1:8
+		model = svmTrain(X, y, choice(i), @(x1, x2) gaussianKernel(x1, x2, choice(j)));
+		predictions = svmPredict(model,Xval);
+		error = mean(double(predictions ~= yval));
+		if error < minError
+			minError = error;
+			curC = choice(i);
+			cur_sigma = choice(j);
+		end
+	end
+end
+
+C = curC;
+sigma = cur_sigma;
 
 
+steps = [ 0.01 0.03 0.1 0.3 1 3 10 30 ];
+minError = Inf;
+minC = Inf;
+minSigma = Inf;
+
+
+
+%{}
+C_list = [0.01; 0.03; 0.1; 0.3; 1; 3; 10; 30];
+sigma_list = [0.01; 0.03; 0.1; 0.3; 1; 3; 10; 30];
+min_err=1;
+
+for i=1:8,
+	Ci = C_list(i);
+	for j=1:8,
+		sigma_j = sigma_list(j);
+		model= svmTrain(X, y, Ci, @(x1, x2) gaussianKernel(x1, x2, sigma_j));
+		predictions = svmPredict(model, Xval);
+		pred_err = mean(double(predictions ~= yval));
+		%fprintf("Ci=%f, sigma_j=%f, pred_err=%f, min_err=%f\n", Ci, sigma_j, pred_err, min_err);
+		if (pred_err < min_err),
+			min_err = pred_err;
+			C = Ci;
+			sigma = sigma_j;
+			%fprintf("	pred_err < min_err, %f--->C, %f --> sigma\n", Ci, sigma_j)
+		end;
+	end;
+end;
+%}
 % =========================================================================
 
 end

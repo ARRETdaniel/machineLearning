@@ -8,7 +8,7 @@
 % https://github.com/Adamliu1/Coursera_Machine_Learning_Stanford/tree/master/ex1-ex8-matlab
 % https://github.com/AvaisP/machine-learning-programming-assignments-coursera-andrew-ng
 % https://github.com/gdwangh/coursera-machine-learning/tree/master/programEx
-% ---- Source Code reference ------
+% ---- Source Code reference ------ 
 %  This file contains code that helps you get started on the
 %  exercise. You will need to complete the following functions:
 %

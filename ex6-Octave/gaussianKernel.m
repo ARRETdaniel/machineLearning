@@ -16,11 +16,15 @@ sim = 0;
 %
 %
 
-% sim = exp(-sum((x1-x2).^2)/(2*sigma^2));
+sim = exp(-sum((x1-x2).^2)/(2*sigma^2));
 
+%{}
+diff = x1 - x2;
+sqDiff = diff.^2;
+sim = exp(-sum(sqDiff)/(2*sigma*sigma));
+%}
 
-
-
+% sim = exp( -(x1-x2)'*(x1 - x2)/ (2*sigma^2));
 % =============================================================
 
 end
