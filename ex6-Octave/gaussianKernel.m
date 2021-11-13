@@ -16,7 +16,9 @@ sim = 0;
 %
 %
 
+%compute the Gaussian kernel between two examples, (x(i), x(j)).
 sim = exp(-sum((x1-x2).^2)/(2*sigma^2));
+%value of 0.324652.
 
 %{}
 diff = x1 - x2;

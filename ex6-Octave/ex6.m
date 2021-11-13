@@ -4,7 +4,7 @@
 %  Instructions
 %  ------------
 
-% ---- Source Code reference ------ 
+% ---- Source Code reference ------
 % https://github.com/vugsus/coursera-machine-learning
 % https://github.com/Adamliu1/Coursera_Machine_Learning_Stanford/tree/master/ex1-ex8-matlab
 % https://github.com/AvaisP/machine-learning-programming-assignments-coursera-andrew-ng
@@ -57,7 +57,7 @@ fprintf('\nTraining Linear SVM ...\n')
 
 % You should try to change the C value below and see how the decision
 % boundary varies (e.g., try C = 1000)
-C = 1;
+C = 100;
 model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
 visualizeBoundaryLinear(X, y, model);
 

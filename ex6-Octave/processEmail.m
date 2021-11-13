@@ -99,7 +99,7 @@ while ~isempty(email_contents)
 
 
 
-word_indices = [word_indices; find(ismember(vocabList, str))];
+    word_indices = [word_indices; find(ismember(vocabList, str))];
 
 %{}
      for i = 1:length(vocabList)
