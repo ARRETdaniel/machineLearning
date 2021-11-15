@@ -100,6 +100,11 @@ while ~isempty(email_contents)
 
 
     word_indices = [word_indices; find(ismember(vocabList, str))];
+    %You should look up the word in the vocabulary
+    %list vocabList and find if the word exists in the vocabulary list. If the word
+    %exists, you should add the index of the word into the word indices variable.
+    %If the word does not exist, and is therefore not in the vocabulary, you can
+    %skip the word.
 
 %{}
      for i = 1:length(vocabList)

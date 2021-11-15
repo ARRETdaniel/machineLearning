@@ -57,9 +57,9 @@ for i = 1:length(word_indices)
 end
 %}
 
-
-w_cnt = size(word_indices, 1);
-for i=1:w_cnt,
+%generate a feature vector for an email, given the word indices
+word_cnt = size(word_indices, 1);
+for i=1:word_cnt,
 	x(word_indices(i)) = 1;
 end;
 
