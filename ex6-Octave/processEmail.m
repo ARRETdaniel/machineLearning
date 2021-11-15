@@ -99,30 +99,23 @@ while ~isempty(email_contents)
 
 
 
-    word_indices = [word_indices; find(ismember(vocabList, str))];
-    %You should look up the word in the vocabulary
+    %word_indices = [word_indices; find(ismember(vocabList, str))];
+
+
+
+     %You should look up the word in the vocabulary
     %list vocabList and find if the word exists in the vocabulary list. If the word
     %exists, you should add the index of the word into the word indices variable.
     %If the word does not exist, and is therefore not in the vocabulary, you can
     %skip the word.
-
-%{}
-     for i = 1:length(vocabList)
+    for i = 1:length(vocabList)
         if strcmp(str,vocabList{i})
             word_indices = [word_indices; i];
             break;
         end
     end
-%}
 
-%{}
-	for idx=1:size(vocabList),
-		if strcmp(str, vocabList{idx})==1,
-			word_indices = [word_indices ; idx];
-			break;
-		end;
-	end;
-%}
+
     % =============================================================
 
 
@@ -140,3 +133,13 @@ end
 fprintf('\n\n=========================\n');
 
 end
+
+
+%{}
+	for indx=1:size(vocabList),
+		if strcmp(str, vocabList{indx})==1,
+			word_indices = [word_indices ; indx];
+			break;
+		end;
+	end;
+%}
