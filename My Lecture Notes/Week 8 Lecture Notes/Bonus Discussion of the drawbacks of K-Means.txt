@@ -1,0 +1,2 @@
+Bonus: Discussion of the drawbacks of K-Means
+This links to a discussion that shows various situations in which K-means gives totally correct but unexpected results: http://stats.stackexchange.com/questions/133656/how-to-understand-the-drawbacks-of-k-means 
