@@ -23,8 +23,16 @@ S = zeros(n);
 %sigma = (X' * X) ./ m;
 %[U, S, V] = svd(sigma);
 
+% ====================== YOUR CODE HERE ======================
+% Σ = (1/m) *  X' * X   % Σ is a n × n matrix and not the summation operator
+
+%  X is the data matrix with examples in rows
+% m is the number of examples.
 sigma = (1/m) * X'*X;
-[U,S,v] = svd(sigma);
+[U, S, V] = svd(sigma); %  run SVD on it to compute the principal components.
+% U will contain the principal components and
+% S will contain a diagonal matrix.
+% ====================== YOUR CODE HERE ======================
 
 % X: m*n
 %sigma = X' * X ./ m;   % n*n

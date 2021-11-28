@@ -31,6 +31,8 @@ idx = zeros(size(X,1), 1);
 %endfor
 
 
+%K is total number of centroids
+%loop over every training example and every centroid.
 for i = 1:size(X,1)
 	min = Inf;
 	for j = 1:K

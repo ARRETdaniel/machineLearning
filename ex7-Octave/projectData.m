@@ -26,9 +26,19 @@ Z = zeros(size(X, 1), K);
 %    x = X(i, :)';
 %    Z(i, :) = x' * U(:, 1:K);
 %end
+% ====================== YOUR CODE HERE ======================
 
+%given a dataset X,
+%the principal components U,
+%and the desired number of dimensions to reduce to K.
+
+%project each example in X onto the top K components in U.
+%Note that the top K components in U are given by the first K columns of U, that is U reduce = U(:, 1:K)
 Ureduce = U(:, 1:K);
 Z = X * Ureduce;
+
+% ====================== YOUR CODE HERE ======================
+
 % =============================================================
 
 end

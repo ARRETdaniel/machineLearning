@@ -114,6 +114,18 @@ fprintf('\nRunning K-Means clustering on pixels from an image.\n\n');
 
 %  Load an image of a bird
 A = double(imread('bird_small.png'));
+A = double(imread('pp.jpg'));
+% ------------------------------------
+% Load 128x128 color image (bird small.png)
+
+%%A = imread('bird small.png');
+
+% You will need to have installed the image package to used
+% imread. If you do not have the image package installed, you
+% should instead change the following line to
+%
+% load('bird small.mat'); % Loads the image into the variable A
+% ------------------------------------
 
 % If imread does not work for you, you can try instead
 %   load ('bird_small.mat');

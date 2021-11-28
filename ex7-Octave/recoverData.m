@@ -30,9 +30,15 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %        X_rec(i, j) = v' * U(j, 1:K)';
 %    end
 %end
+% ====================== YOUR CODE HERE ======================
+
+
+%project each example in Z back onto the original space and return the recovered approximation in X_rec
 
 Ureduce = U(:, 1:K);
 X_rec = Z * Ureduce';
+
+% ====================== YOUR CODE HERE ======================
 
 % =============================================================
 

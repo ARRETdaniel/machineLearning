@@ -45,8 +45,11 @@ centroids = zeros(K, n);
 
 %centroids = sumOfElementsHavingCentroid_k./numberOfElementsHavingCentroid_k;
 
+
+% µk := (1/|Ck|) Xi∈Ckx(i)
+% loop over the centroids
 for k = 1:K,
-	Ck = X(find(idx==k),:);
+	Ck = X(find(idx==k),:); % Ck is the set of examples that are assigned to centroid k
 	centroids(k,:) = sum(Ck, 1)/size(Ck,1);
 end;
 
