@@ -22,12 +22,26 @@ sigma2 = zeros(n, 1);
 %
 
 
+% =============================================================
 
+
+%This function
+%takes as input the data matrix X and should output an n-dimension vector
+%mu that holds the mean of all the n features and another n-dimension vector
+%sigma2 that holds the variances of all the features.
+
+%vectorized implementation
+%= (1 / m) * sum(X)
 mu = mean(X);
+
+%var function will (by default) use 1/m−1, instead of 1/m, when computing σi^2
+% = (1 / m) * sum((X - muT).^2)
 sigma2 = var(X,opt=1);
 
 % =============================================================
+% =============================================================
 
+%{
 muT = (1 / m) * sum(X);
 mu = muT';
 sigma2T = (1 / m) * sum((X - muT).^2);
@@ -39,7 +53,7 @@ sigma2 = var(X, 1);
 
 mu = mu(:);
 sigma2 = sigma2(:);
-
+%}
 
 % =============================================================
 

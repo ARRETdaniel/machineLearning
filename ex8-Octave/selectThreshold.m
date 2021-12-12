@@ -23,38 +23,48 @@ for epsilon = min(pval):stepsize:max(pval)
     % Note: You can use predictions = (pval < epsilon) to get a binary vector
     %       of 0's and 1's of the outlier predictions
 
-    predictions = (pval < epsilon);
 
+    %The vector of all of these probabilities p is passed to selectThreshold.m in the vector pval.
+    %The F1 score is computed using precision (prec) and recall (rec):
+    %vectorized implementation:
+
+    %If an example x has a low probability p(x) < ε,then it is considered to be an anomaly
+    predictions = (pval < epsilon);
+    %You can then, for example, compute the number of false positives using:
+
+    %fp = sum((cvPredictions == 1) &(yval == 0)).
     truePositives  = sum((predictions == 1) & (yval == 1));
     falsePositives = sum((predictions == 1) & (yval == 0));
     falseNegatives = sum((predictions == 0) & (yval == 1));
 
+    %prec =tp / (tp + fp)
     precision = truePositives / (truePositives + falsePositives);
+    %rec = tp / (tp + fn)
     recall = truePositives / (truePositives + falseNegatives);
 
     F1 = (2 * precision * recall) / (precision + recall);
 
 % =============================================================
 
-    predictions = (pval < epsilon);
-    tp = sum((predictions == 1) & (yval == 1));
-    fp = sum((predictions == 1) & (yval == 0));
-    fn = sum((predictions == 0) & (yval == 1));
-    prec = tp / (tp + fp);
-    rec = tp / (tp + fn);
-    F1 = 2 * prec * rec /(prec + rec);
+   % predictions = (pval < epsilon);
+   % tp = sum((predictions == 1) & (yval == 1));
+   % fp = sum((predictions == 1) & (yval == 0));
+   % fn = sum((predictions == 0) & (yval == 1));
+   % prec = tp / (tp + fp);
+   % rec = tp / (tp + fn);
+   % F1 = 2 * prec * rec /(prec + rec);
 
 
 
-% =============================================================
+    %============================================================
 
-	pred = ( pval < epsilon);
-	tp = sum( ( pred == 1) & (yval == 1));
-	fp = sum( ( pred == 1) & (yval == 0));
-	fn = sum( ( pred == 0) & (yval == 1));
-	prec = tp / (tp + fp);
-	rec =  tp / (tp + fn);
-	F1 = (2 * prec * rec) / (prec + rec);
+	%pred = ( pval < epsilon);
+	%tp = sum( ( pred == 1) & (yval == 1));
+	%fp = sum( ( pred == 1) & (yval == 0));
+	%fn = sum( ( pred == 0) & (yval == 1));
+	%prec = tp / (tp + fp);
+	%rec =  tp / (tp + fn);
+	%F1 = (2 * prec * rec) / (prec + rec);
 
 
 
