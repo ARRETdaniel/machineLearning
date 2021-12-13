@@ -42,16 +42,22 @@ Theta_grad = zeros(size(Theta));
 
 
 errors = (X*Theta' - Y) .* R;
+
+%The collaborative filtering cost function (without regularization) is given by
+% J(x^(1), ..., x^(nm), θ^(1), ..., θ^(nu)) = 1/2X(i,j):r(i,j)=1((θ^(j))^T x^(i) − y^(i,j))^2
 regularizationTheta = lambda/2 * sum(sum(Theta.^2));
 regularizationX = lambda/2 * sum(sum(X.^2));
 
+%J = 1 / 2 * sum(sum(R .* (X * Theta' - Y).^2)) + lambda / 2 * (sum(sum(Theta .^ 2)) + sum(sum(X .^ 2)))
 J = 1/2 * sum(sum(errors .^2)) + regularizationTheta + regularizationX;
+
+%grad
 X_grad = errors * Theta + lambda * X;
 Theta_grad = errors' * X + lambda * Theta;
 
 % =============================================================
 
-
+%{
 
 J = 1 / 2 * sum(sum(R .* (X * Theta' - Y).^2)) + lambda / 2 * (sum(sum(Theta .^ 2)) + sum(sum(X .^ 2)));
 
@@ -90,7 +96,7 @@ for j=1:num_users,
 end;
 
 
-
+%}
 
 % =============================================================
 
